@@ -13,7 +13,7 @@ public class PersonService {
     @Autowired
     private PersonRepository repository;
 
-    public Person save(Person person) {
+    public Person create(Person person) {
         LocalDateTime now  = LocalDateTime.now();
 
         person.setId(UUID.randomUUID());
