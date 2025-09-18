@@ -30,4 +30,9 @@ public class PersonController {
     public Person update(@PathVariable UUID id, @RequestBody Person person) {
         return service.update(id, person);
     }
+
+    @DeleteMapping("/{id}")
+    public Person delete(@PathVariable UUID id) {
+        return service.delete(id);
+    }
 }

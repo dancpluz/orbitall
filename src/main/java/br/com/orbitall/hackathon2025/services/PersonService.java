@@ -41,4 +41,12 @@ public class PersonService {
         return repository.save(fetched);
     }
 
+    public Person delete(UUID id) {
+        Person fetched = repository.findById(id).get();
+
+        fetched.setUpdatedAt(LocalDateTime.now());
+        fetched.setActive(false);
+
+        return repository.save(fetched);
+    }
 }
