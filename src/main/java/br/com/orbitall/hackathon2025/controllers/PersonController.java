@@ -4,6 +4,7 @@ import br.com.orbitall.hackathon2025.canonicals.PersonInput;
 import br.com.orbitall.hackathon2025.canonicals.PersonOutput;
 import br.com.orbitall.hackathon2025.models.Person;
 import br.com.orbitall.hackathon2025.services.PersonService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
@@ -16,7 +17,7 @@ public class PersonController {
     private PersonService service;
 
     @PostMapping
-    public PersonOutput create(@RequestBody PersonInput person) {
+    public PersonOutput create(@Valid @RequestBody PersonInput person) {
         return service.create(person);
     }
 
