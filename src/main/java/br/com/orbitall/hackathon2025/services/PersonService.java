@@ -1,5 +1,7 @@
 package br.com.orbitall.hackathon2025.services;
 
+import br.com.orbitall.hackathon2025.canonicals.PersonInput;
+import br.com.orbitall.hackathon2025.canonicals.PersonOutput;
 import br.com.orbitall.hackathon2025.models.Person;
 import br.com.orbitall.hackathon2025.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +14,31 @@ public class PersonService {
     @Autowired
     private PersonRepository repository;
 
-    public Person create(Person person) {
+    public PersonOutput create(PersonInput input) {
         LocalDateTime now  = LocalDateTime.now();
+
+        Person person = new Person();
+
+        person.setFullName(input.fullName());
+        person.setAge(input.age());
+        person.setDescription(input.description());
 
         person.setId(UUID.randomUUID());
         person.setCreatedAt(now);
         person.setUpdatedAt(now);
         person.setActive(true);
 
-        return repository.save(person);
+        repository.save(person);
+
+        return new PersonOutput(
+            person.getId(),
+            person.getFullName(),
+            person.getAge(),
+            person.getDescription(),
+            person.getCreatedAt(),
+            person.getUpdatedAt(),
+            person.isActive()
+        );
     }
 
     public Person retrieve(UUID id) {

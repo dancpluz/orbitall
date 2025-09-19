@@ -1,5 +1,7 @@
 package br.com.orbitall.hackathon2025.controllers;
 
+import br.com.orbitall.hackathon2025.canonicals.PersonInput;
+import br.com.orbitall.hackathon2025.canonicals.PersonOutput;
 import br.com.orbitall.hackathon2025.models.Person;
 import br.com.orbitall.hackathon2025.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,7 @@ public class PersonController {
     private PersonService service;
 
     @PostMapping
-    public Person create(@RequestBody Person person) {
+    public PersonOutput create(@RequestBody PersonInput person) {
         return service.create(person);
     }
 

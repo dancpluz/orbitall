@@ -11,7 +11,6 @@ import java.util.UUID;
 @Table(name = "PERSONS")
 @Data
 public class Person {
-
     @Id UUID id;
     private String fullName;
     private int age;
@@ -19,6 +18,4 @@ public class Person {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private boolean active;
-
-
 }
