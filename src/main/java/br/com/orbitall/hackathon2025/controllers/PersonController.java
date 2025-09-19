@@ -4,7 +4,6 @@ import br.com.orbitall.hackathon2025.models.Person;
 import br.com.orbitall.hackathon2025.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.UUID;
 
 @RestController
