@@ -4,33 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="013e27f8-d27e-478a-9e44-4d96c27c959e" name="Changes" comment="refactor: improve reusability">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/ChannelsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/CustomerInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/CustomerOutput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/TransactionInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/TransactionOutput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/controllers/CustomerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/controllers/TransactionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/controllers/WelcomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/exceptions/ResourceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/handlers/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/models/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/models/Transaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/repositories/CustomerRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/repositories/TransactionRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/services/CustomerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/services/TransactionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/banner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/orbitall/channels/ChannelsApplicationTests.java" beforeDir="false" />
+    <list default="true" id="013e27f8-d27e-478a-9e44-4d96c27c959e" name="Changes" comment="build: change project locations, add postman and readme">
+      <change beforePath="$PROJECT_DIR$/channels/src/main/java/br/com/orbitall/channels/canonicals/TransactionInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/channels/src/main/java/br/com/orbitall/channels/canonicals/TransactionInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,25 +62,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HackathonOrbitall2025Application.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersonControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersonRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersonServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hackathon-orbitall-2025 [spring-boot:run].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HackathonOrbitall2025Application.executor": "Run",
+    "JUnit.PersonControllerTest.executor": "Run",
+    "JUnit.PersonRepositoryTest.executor": "Run",
+    "JUnit.PersonServiceTest.executor": "Run",
+    "Maven. [spring-boot:run].executor": "Run",
+    "Maven.hackathon-orbitall-2025 [spring-boot:run].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name=" [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
@@ -385,11 +361,18 @@
       <option name="project" value="LOCAL" />
       <updated>1758384935754</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="build: change project locations, add postman and readme">
+      <option name="closed" value="true" />
+      <created>1758385379332</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1758385379332</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add repository and service" />
     <MESSAGE value="feat: first api route create person" />
     <MESSAGE value="feat: add retrieve and update" />
     <MESSAGE value="feat: add delete route" />
@@ -414,7 +397,8 @@
     <MESSAGE value="feat: working transaction create" />
     <MESSAGE value="feat: working transaction retrieve" />
     <MESSAGE value="refactor: improve reusability" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: improve reusability" />
+    <MESSAGE value="build: change project locations, add postman and readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: change project locations, add postman and readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
