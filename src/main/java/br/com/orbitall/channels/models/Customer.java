@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -19,9 +17,4 @@ public class Customer {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private boolean active;
-    @OneToMany(
-        mappedBy = "customer",
-        orphanRemoval = true
-    )
-    private Set<Transaction> transactions = new HashSet<>();
 }

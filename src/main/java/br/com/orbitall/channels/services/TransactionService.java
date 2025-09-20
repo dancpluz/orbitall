@@ -34,7 +34,7 @@ public class TransactionService {
         transaction.setCreatedAt(LocalDateTime.now());
         transaction.setActive(true);
 
-        transaction.setCustomer(customer);
+        transaction.setCustomerId(customer.getId());
 
         Transaction savedTransaction = transactionRepository.save(transaction);
         return new TransactionOutput(
@@ -43,7 +43,7 @@ public class TransactionService {
             savedTransaction.getCardType(),
             savedTransaction.getCreatedAt(),
             savedTransaction.isActive(),
-            savedTransaction.getCustomer()
+            customer
         );
     }
 

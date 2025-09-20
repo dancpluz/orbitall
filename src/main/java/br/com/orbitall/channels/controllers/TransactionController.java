@@ -19,8 +19,8 @@ public class TransactionController {
         return service.create(input);
     }
 
-    @GetMapping
-    public TransactionInput retrieve(@RequestParam("customerId") UUID customerId) {
-        return service.retrive(input);
-    }
+//    @GetMapping
+//    public TransactionInput retrieve(@RequestParam("customerId") UUID customerId) {
+//        return service.retrieve(customerId);
+//    }
 }
