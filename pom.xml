@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.orbitall</groupId>
-	<artifactId>hackathon-orbitall-2025</artifactId>
+	<artifactId>channels</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hackathon-orbitall-2025</name>
-	<description>Projeto do Hackathon 2025</description>
+	<name>channels</name>
+	<description>Orbitall 2025 Hackathon final challenge.</description>
 	<url/>
 	<licenses>
 		<license/>

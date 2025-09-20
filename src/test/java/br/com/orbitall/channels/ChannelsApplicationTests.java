@@ -1,10 +1,10 @@
-package br.com.orbitall.hackathon2025;
+package br.com.orbitall.channels;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HackathonOrbitall2025ApplicationTests {
+class ChannelsApplicationTests {
 
 	@Test
 	void contextLoads() {
