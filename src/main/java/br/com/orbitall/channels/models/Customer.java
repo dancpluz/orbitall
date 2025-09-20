@@ -1,11 +1,11 @@
 package br.com.orbitall.channels.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -19,4 +19,10 @@ public class Customer {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private boolean active;
+    @OneToMany(
+        mappedBy = "customer",
+        orphanRemoval = true,
+        fetch = FetchType.LAZY
+    )
+    private Set<Transaction> transactions = new HashSet<>();
 }
