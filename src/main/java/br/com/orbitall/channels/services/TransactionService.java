@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -47,7 +49,28 @@ public class TransactionService {
         );
     }
 
-    public TransactionOutput retrieve(UUID customerId) {
-        return null;
+    public List<TransactionOutput> retrieve(UUID customerId) {
+        Customer customer = customerRepository
+                .findById(customerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found with id: " + customerId));
+
+        List<TransactionOutput> outputs = new ArrayList<>();
+        transactionRepository.findAllByCustomerId(customer.getId()).forEach(tx -> {
+            TransactionOutput out = new TransactionOutput(
+                tx.getId(),
+                tx.getAmount(),
+                tx.getCardType(),
+                tx.getCreatedAt(),
+                tx.isActive(),
+                customer
+            );
+            outputs.add(out);
+        });
+
+        if (outputs.isEmpty()) {
+            throw new ResourceNotFoundException("No transactions found for customer id: " + customerId);
+        }
+
+        return outputs;
     }
 }
