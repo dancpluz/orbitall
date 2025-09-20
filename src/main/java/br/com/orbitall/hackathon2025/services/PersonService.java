@@ -2,6 +2,7 @@ package br.com.orbitall.hackathon2025.services;
 
 import br.com.orbitall.hackathon2025.canonicals.PersonInput;
 import br.com.orbitall.hackathon2025.canonicals.PersonOutput;
+import br.com.orbitall.hackathon2025.exceptions.ResourceNotFoundException;
 import br.com.orbitall.hackathon2025.models.Person;
 import br.com.orbitall.hackathon2025.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,27 +42,65 @@ public class PersonService {
         );
     }
 
-    public Person retrieve(UUID id) {
-        return repository.findById(id).get();
+    public PersonOutput retrieve(UUID id) {
+        Person person = repository
+                .findById(id)
+                .filter(Person::isActive)
+                .orElseThrow(() -> new ResourceNotFoundException("Not found the resource (id: " + id + ")"));
+
+        return new PersonOutput(
+            person.getId(),
+            person.getFullName(),
+            person.getAge(),
+            person.getDescription(),
+            person.getCreatedAt(),
+            person.getUpdatedAt(),
+            person.isActive()
+        );
     }
 
-    public Person update(UUID id, Person person) {
-        Person fetched = repository.findById(id).get();
+    public PersonOutput update(UUID id, PersonInput input) {
+        Person fetched = repository
+                .findById(id)
+                .filter(Person::isActive)
+                .orElseThrow(() -> new ResourceNotFoundException("Not found the resource (id: " + id + ")"));
 
-        fetched.setFullName(person.getFullName());
-        fetched.setAge(person.getAge());
-        fetched.setDescription(person.getDescription());
+        fetched.setFullName(input.fullName());
+        fetched.setAge(input.age());
+        fetched.setDescription(input.description());
         fetched.setUpdatedAt(LocalDateTime.now());
 
-        return repository.save(fetched);
+        repository.save(fetched);
+
+        return new PersonOutput(
+            fetched.getId(),
+            fetched.getFullName(),
+            fetched.getAge(),
+            fetched.getDescription(),
+            fetched.getCreatedAt(),
+            fetched.getUpdatedAt(),
+            fetched.isActive()
+        );
     }
 
-    public Person delete(UUID id) {
-        Person fetched = repository.findById(id).get();
+    public PersonOutput delete(UUID id) {
+        Person fetched = repository
+            .findById(id)
+            .filter(Person::isActive)
+            .orElseThrow(() -> new ResourceNotFoundException("Not found the resource (id: " + id + ")"));
 
         fetched.setUpdatedAt(LocalDateTime.now());
         fetched.setActive(false);
+        repository.save(fetched);
 
-        return repository.save(fetched);
+        return new PersonOutput(
+            fetched.getId(),
+            fetched.getFullName(),
+            fetched.getAge(),
+            fetched.getDescription(),
+            fetched.getCreatedAt(),
+            fetched.getUpdatedAt(),
+            fetched.isActive()
+        );
     }
 }

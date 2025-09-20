@@ -12,27 +12,20 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
-
     @Autowired
     private PersonService service;
 
     @PostMapping
-    public PersonOutput create(@Valid @RequestBody PersonInput person) {
-        return service.create(person);
-    }
+    public PersonOutput create(@Valid @RequestBody PersonInput person) { return service.create(person); }
 
     @GetMapping("/{id}")
-    public Person retrieve(@PathVariable UUID id) {
-        return service.retrieve(id);
-    }
+    public PersonOutput retrieve(@PathVariable UUID id) { return service.retrieve(id); }
 
-    @GetMapping("/{id}")
-    public Person update(@PathVariable UUID id, @RequestBody Person person) {
-        return service.update(id, person);
-    }
+    @PutMapping("/{id}")
+    public PersonOutput update(@PathVariable UUID id, @RequestBody PersonInput person) { return service.update(id, person); }
 
     @DeleteMapping("/{id}")
-    public Person delete(@PathVariable UUID id) {
+    public PersonOutput delete(@PathVariable UUID id) {
         return service.delete(id);
     }
 }
