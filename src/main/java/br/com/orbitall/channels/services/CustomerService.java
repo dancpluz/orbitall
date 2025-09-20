@@ -18,6 +18,18 @@ public class CustomerService {
     @Autowired
     private CustomerRepository repository;
 
+    private CustomerOutput toOutput(Customer customer) {
+        return new CustomerOutput(
+                customer.getId(),
+                customer.getFullName(),
+                customer.getEmail(),
+                customer.getPhone(),
+                customer.getCreatedAt(),
+                customer.getUpdatedAt(),
+                customer.isActive()
+        );
+    }
+
     public CustomerOutput create(CustomerInput input) {
         LocalDateTime now = LocalDateTime.now();
 
@@ -33,15 +45,7 @@ public class CustomerService {
 
         repository.save(customer);
 
-        return new CustomerOutput(
-                customer.getId(),
-                customer.getFullName(),
-                customer.getEmail(),
-                customer.getPhone(),
-                customer.getCreatedAt(),
-                customer.getUpdatedAt(),
-                customer.isActive()
-        );
+        return toOutput(customer);
     }
 
     public CustomerOutput retrieve(UUID id) {
@@ -50,15 +54,7 @@ public class CustomerService {
                 .filter(Customer::isActive)
                 .orElseThrow(() -> new ResourceNotFoundException("Could not find active customer with id: " + id));
 
-        return new CustomerOutput(
-                customer.getId(),
-                customer.getFullName(),
-                customer.getEmail(),
-                customer.getPhone(),
-                customer.getCreatedAt(),
-                customer.getUpdatedAt(),
-                customer.isActive()
-        );
+        return toOutput(customer);
     }
 
     public CustomerOutput update(UUID id, CustomerInput input) {
@@ -74,15 +70,7 @@ public class CustomerService {
 
         repository.save(fetched);
 
-        return new CustomerOutput(
-                fetched.getId(),
-                fetched.getFullName(),
-                fetched.getEmail(),
-                fetched.getPhone(),
-                fetched.getCreatedAt(),
-                fetched.getUpdatedAt(),
-                fetched.isActive()
-        );
+        return toOutput(fetched);
     }
 
     public CustomerOutput delete(UUID id) {
@@ -96,15 +84,7 @@ public class CustomerService {
 
         repository.save(fetched);
 
-        return new CustomerOutput(
-                fetched.getId(),
-                fetched.getFullName(),
-                fetched.getEmail(),
-                fetched.getPhone(),
-                fetched.getCreatedAt(),
-                fetched.getUpdatedAt(),
-                fetched.isActive()
-        );
+        return toOutput(fetched);
     }
 
     public List<CustomerOutput> findAll() {
@@ -115,20 +95,10 @@ public class CustomerService {
                 .forEach(customer -> {
 
                 if(customer.isActive()) {
-                    CustomerOutput output = new CustomerOutput(
-                            customer.getId(),
-                            customer.getFullName(),
-                            customer.getEmail(),
-                            customer.getPhone(),
-                            customer.getCreatedAt(),
-                            customer.getUpdatedAt(),
-                            customer.isActive()
-                    );
+                    CustomerOutput output = toOutput(customer);
                     list.add(output);
                 }
         });
-
-        if (list.isEmpty()) { throw new ResourceNotFoundException("Could not find any active customer"); }
 
         return list;
     }

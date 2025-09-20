@@ -23,6 +23,17 @@ public class TransactionService {
     @Autowired
     private CustomerRepository customerRepository;
 
+    private TransactionOutput toOutput(Transaction transaction, Customer customer) {
+        return new TransactionOutput(
+                transaction.getId(),
+                transaction.getAmount(),
+                transaction.getCardType(),
+                transaction.getCreatedAt(),
+                transaction.isActive(),
+                customer
+        );
+    }
+
     public TransactionOutput create(TransactionInput input) {
         Customer customer = customerRepository
                 .findById(input.customerId())
@@ -39,14 +50,7 @@ public class TransactionService {
         transaction.setCustomerId(customer.getId());
 
         Transaction savedTransaction = transactionRepository.save(transaction);
-        return new TransactionOutput(
-            savedTransaction.getId(),
-            savedTransaction.getAmount(),
-            savedTransaction.getCardType(),
-            savedTransaction.getCreatedAt(),
-            savedTransaction.isActive(),
-            customer
-        );
+        return toOutput(savedTransaction, customer);
     }
 
     public List<TransactionOutput> retrieve(UUID customerId) {
@@ -56,20 +60,9 @@ public class TransactionService {
 
         List<TransactionOutput> outputs = new ArrayList<>();
         transactionRepository.findAllByCustomerId(customer.getId()).forEach(tx -> {
-            TransactionOutput out = new TransactionOutput(
-                tx.getId(),
-                tx.getAmount(),
-                tx.getCardType(),
-                tx.getCreatedAt(),
-                tx.isActive(),
-                customer
-            );
+            TransactionOutput out = toOutput(tx, customer);
             outputs.add(out);
         });
-
-        if (outputs.isEmpty()) {
-            throw new ResourceNotFoundException("No transactions found for customer id: " + customerId);
-        }
 
         return outputs;
     }
