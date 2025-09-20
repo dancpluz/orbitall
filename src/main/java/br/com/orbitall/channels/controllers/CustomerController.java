@@ -17,7 +17,7 @@ public class CustomerController {
     private CustomerService service;
 
     @PostMapping
-    public CustomerOutput createCustomer(@Valid @RequestBody CustomerInput input) {
+    public CustomerOutput create(@Valid @RequestBody CustomerInput input) {
         return service.create(input);
     }
 
@@ -27,7 +27,7 @@ public class CustomerController {
     }
 
     @PutMapping("/{id}")
-    public CustomerOutput update(@PathVariable UUID id, @RequestBody CustomerInput input) {
+    public CustomerOutput update(@PathVariable UUID id, @Valid @RequestBody CustomerInput input) {
         return service.update(id, input);
     }
 
