@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
-
 @RestController
 @RequestMapping("/transactions")
 public class TransactionController {
@@ -17,11 +16,11 @@ public class TransactionController {
 
     @PostMapping
     public TransactionOutput create(@Valid @RequestBody TransactionInput input) {
-
+        return service.create(input);
     }
 
     @GetMapping
-    public TransactionInput retrieve(@RequestParam("id") UUID id) {
-
+    public TransactionInput retrieve(@RequestParam("customerId") UUID customerId) {
+        return service.retrive(input);
     }
 }

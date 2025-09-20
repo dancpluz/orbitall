@@ -21,8 +21,7 @@ public class Customer {
     private boolean active;
     @OneToMany(
         mappedBy = "customer",
-        orphanRemoval = true,
-        fetch = FetchType.LAZY
+        orphanRemoval = true
     )
     private Set<Transaction> transactions = new HashSet<>();
 }
