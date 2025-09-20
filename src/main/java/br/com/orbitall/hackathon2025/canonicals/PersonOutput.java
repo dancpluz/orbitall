@@ -11,5 +11,5 @@ public record PersonOutput(
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
         boolean active
-    ) {
+) {
 }
