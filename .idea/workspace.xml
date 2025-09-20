@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="013e27f8-d27e-478a-9e44-4d96c27c959e" name="Changes" comment="refactor: improve reusability">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/ChannelsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/CustomerInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/CustomerOutput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/TransactionInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/canonicals/TransactionOutput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/controllers/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/controllers/TransactionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/controllers/WelcomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/exceptions/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/handlers/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/models/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/models/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/repositories/CustomerRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/repositories/TransactionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/services/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/orbitall/channels/services/TransactionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/orbitall/channels/ChannelsApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="study" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dancpluz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dancpluz/orbitall&quot;,
+    &quot;accountId&quot;: &quot;f7cf3816-9b49-481b-b42a-cbb7759d2226&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="32tHWF7fnZoDmWMPf2O58NAxwgZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HackathonOrbitall2025Application.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.hackathon-orbitall-2025 [spring-boot:run].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name=" [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="spring-boot:run" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/channels" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="013e27f8-d27e-478a-9e44-4d96c27c959e" name="Changes" comment="" />
+      <created>1758232978988</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758232978988</updated>
+    </task>
+    <task id="LOCAL-00001" summary="feat: first controller">
+      <option name="closed" value="true" />
+      <created>1758234508877</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758234508877</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: first get work">
+      <option name="closed" value="true" />
+      <created>1758234983825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1758234983825</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: add person model">
+      <option name="closed" value="true" />
+      <created>1758236445872</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758236445873</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: h2 config">
+      <option name="closed" value="true" />
+      <created>1758236807808</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758236807808</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add repository and service">
+      <option name="closed" value="true" />
+      <created>1758237507012</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758237507012</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: first api route create person">
+      <option name="closed" value="true" />
+      <created>1758238140797</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758238140797</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add retrieve and update">
+      <option name="closed" value="true" />
+      <created>1758239289702</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1758239289702</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: add delete route">
+      <option name="closed" value="true" />
+      <created>1758239537331</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1758239537331</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: clean imports">
+      <option name="closed" value="true" />
+      <created>1758243642352</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1758243642352</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix: clean more imports">
+      <option name="closed" value="true" />
+      <created>1758243811194</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1758243811194</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: add canonicals">
+      <option name="closed" value="true" />
+      <created>1758320896195</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1758320896195</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: global error handler">
+      <option name="closed" value="true" />
+      <created>1758321473035</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1758321473035</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: adapt canonicals and routes">
+      <option name="closed" value="true" />
+      <created>1758335002682</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1758335002682</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: clone current project">
+      <option name="closed" value="true" />
+      <created>1758369459544</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1758369459544</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: add unit tests">
+      <option name="closed" value="true" />
+      <created>1758373485532</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1758373485532</updated>
+    </task>
+    <task id="LOCAL-00016" summary="build: final challenge start">
+      <option name="closed" value="true" />
+      <created>1758375018362</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1758375018362</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: project structure">
+      <option name="closed" value="true" />
+      <created>1758375580913</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1758375580913</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: add CRUD and models">
+      <option name="closed" value="true" />
+      <created>1758376348289</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376348289</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix: add service classes">
+      <option name="closed" value="true" />
+      <created>1758376533167</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376533167</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: controller and service skeleton">
+      <option name="closed" value="true" />
+      <created>1758376967577</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1758376967577</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: customer canonicals">
+      <option name="closed" value="true" />
+      <created>1758377351702</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1758377351702</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: create and retrieve customers">
+      <option name="closed" value="true" />
+      <created>1758377669353</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1758377669353</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: add basic exception handlers">
+      <option name="closed" value="true" />
+      <created>1758377776910</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1758377776910</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: add services for customer">
+      <option name="closed" value="true" />
+      <created>1758379305017</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1758379305017</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: transaction controller and canonicals">
+      <option name="closed" value="true" />
+      <created>1758380272837</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1758380272837</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: transaction service and some errors">
+      <option name="closed" value="true" />
+      <created>1758383225381</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1758383225381</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: working transaction create">
+      <option name="closed" value="true" />
+      <created>1758383739515</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1758383739515</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: working transaction retrieve">
+      <option name="closed" value="true" />
+      <created>1758384322778</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1758384322778</updated>
+    </task>
+    <task id="LOCAL-00029" summary="refactor: improve reusability">
+      <option name="closed" value="true" />
+      <created>1758384935754</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1758384935754</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add repository and service" />
+    <MESSAGE value="feat: first api route create person" />
+    <MESSAGE value="feat: add retrieve and update" />
+    <MESSAGE value="feat: add delete route" />
+    <MESSAGE value="fix: clean imports" />
+    <MESSAGE value="fix: clean more imports" />
+    <MESSAGE value="feat: add canonicals" />
+    <MESSAGE value="feat: global error handler" />
+    <MESSAGE value="feat: adapt canonicals and routes" />
+    <MESSAGE value="feat: clone current project" />
+    <MESSAGE value="feat: add unit tests" />
+    <MESSAGE value="build: final challenge start" />
+    <MESSAGE value="feat: project structure" />
+    <MESSAGE value="feat: add CRUD and models" />
+    <MESSAGE value="fix: add service classes" />
+    <MESSAGE value="feat: controller and service skeleton" />
+    <MESSAGE value="feat: customer canonicals" />
+    <MESSAGE value="feat: create and retrieve customers" />
+    <MESSAGE value="feat: add basic exception handlers" />
+    <MESSAGE value="feat: add services for customer" />
+    <MESSAGE value="feat: transaction controller and canonicals" />
+    <MESSAGE value="feat: transaction service and some errors" />
+    <MESSAGE value="feat: working transaction create" />
+    <MESSAGE value="feat: working transaction retrieve" />
+    <MESSAGE value="refactor: improve reusability" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: improve reusability" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
