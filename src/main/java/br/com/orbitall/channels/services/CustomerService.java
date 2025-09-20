@@ -2,6 +2,7 @@ package br.com.orbitall.channels.services;
 
 import br.com.orbitall.channels.canonicals.CustomerInput;
 import br.com.orbitall.channels.canonicals.CustomerOutput;
+import br.com.orbitall.channels.exceptions.ResourceNotFoundException;
 import br.com.orbitall.channels.models.Customer;
 import br.com.orbitall.channels.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,7 @@ public class CustomerService {
         Customer customer = repository
                 .findById(id)
                 .filter(Customer::isActive)
-                .orElseThrow(() -> new ResourceNotFoundException("Not found the resource (id: " + id + ")"));
+                .orElseThrow(() -> new ResourceNotFoundException("Could not find active customer with id: " + id));
 
         return new CustomerOutput(
                 customer.getId(),
@@ -61,15 +62,75 @@ public class CustomerService {
     }
 
     public CustomerOutput update(UUID id, CustomerInput input) {
+        Customer fetched = repository
+                .findById(id)
+                .filter(Customer::isActive)
+                .orElseThrow(() -> new ResourceNotFoundException("Could not find active customer with id: " + id));
 
+        fetched.setFullName(input.fullName());
+        fetched.setEmail(input.email());
+        fetched.setPhone(input.phone());
+        fetched.setUpdatedAt(LocalDateTime.now());
+
+        repository.save(fetched);
+
+        return new CustomerOutput(
+                fetched.getId(),
+                fetched.getFullName(),
+                fetched.getEmail(),
+                fetched.getPhone(),
+                fetched.getCreatedAt(),
+                fetched.getUpdatedAt(),
+                fetched.isActive()
+        );
     }
 
     public CustomerOutput delete(UUID id) {
+        Customer fetched = repository
+                .findById(id)
+                .filter(Customer::isActive)
+                .orElseThrow(() -> new ResourceNotFoundException("Could not find active customer with id: " + id));
 
+        fetched.setUpdatedAt(LocalDateTime.now());
+        fetched.setActive(false);
+
+        repository.save(fetched);
+
+        return new CustomerOutput(
+                fetched.getId(),
+                fetched.getFullName(),
+                fetched.getEmail(),
+                fetched.getPhone(),
+                fetched.getCreatedAt(),
+                fetched.getUpdatedAt(),
+                fetched.isActive()
+        );
     }
 
     public List<CustomerOutput> findAll() {
+        List<CustomerOutput> list = new ArrayList<>();
 
+        repository
+                .findAll()
+                .forEach(customer -> {
+
+                if(customer.isActive()) {
+                    CustomerOutput output = new CustomerOutput(
+                            customer.getId(),
+                            customer.getFullName(),
+                            customer.getEmail(),
+                            customer.getPhone(),
+                            customer.getCreatedAt(),
+                            customer.getUpdatedAt(),
+                            customer.isActive()
+                    );
+                    list.add(output);
+                }
+        });
+
+        if (list.isEmpty()) { throw new ResourceNotFoundException("Could not find any active customer"); }
+
+        return list;
     }
 
 }
